@@ -15,6 +15,9 @@ model_dir = "model_assets"
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model_holder = ModelHolder(model_dir, device)
 
+MODEL_NAME = "MODEL_NAME_HERE"
+SESSION_TOKEN = "YOUR_TOKEN_HERE"
+
 def tts_fn(
     model_name,
     model_path,
@@ -112,7 +115,6 @@ def tts_fn(
         message = wrong_tone_message + "\n" + message
     return message, (sr, audio), kata_tone_json_str
 
-MODEL_NAME = "MODEL_NAME_HERE"
 def get_tts_output(text):
     _, audio_output, _ = tts_fn(
         model_name=MODEL_NAME,
@@ -140,8 +142,7 @@ def get_tts_output(text):
 if __name__ == "__main__":
     called = input("呼ばれ方を入力してください:")
     calling = input("呼び方を入力してください:")
-    session_token = "YOUR_TOKEN_HERE"
-    api = ChatGPT(session_token)
+    api = ChatGPT(SESSION_TOKEN)
 
     with open("prompt.txt", "r", encoding="utf-8") as file:
         prompt = file.read()
