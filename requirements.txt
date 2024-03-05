@@ -1,0 +1,17 @@
+UnlimitedGPT
+torch>=2.1,<2.2
+sounddevice
+loguru
+numpy
+gradio
+safetensors
+scipy
+cn2an
+pypinyin
+jieba
+pyopenjtalk
+num2words
+transformers
+g2p_en
+sentencepiece
+numba
